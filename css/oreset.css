@@ -192,9 +192,6 @@ table {
 /*
   # Forms
 ---------------------------------------------- */
-/*
-  Resetting from elements
-*/
 input {
   border-radius: 0;
 }
@@ -233,7 +230,7 @@ textarea {
 }
 
 /*
-  prettier-ignore
+  Prettier ignore
 ---------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,

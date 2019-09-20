@@ -89,8 +89,8 @@ ul {
 }
 
 pre {
-  font-family: monospace, monospace;
   font-size: 1em;
+  font-family: monospace, monospace;
 }
 
 /*
@@ -120,8 +120,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
   font-size: 1em;
+  font-family: monospace, monospace;
 }
 
 dfn {
@@ -139,18 +139,18 @@ small {
 
 sub,
 sup {
-  font-size: .75em;
-  line-height: 0;
   position: relative;
   vertical-align: baseline;
+  font-size: .75em;
+  line-height: 0;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 /*
@@ -199,8 +199,8 @@ input,
 optgroup,
 select,
 textarea {
-  font: inherit;
   margin: 0;
+  font: inherit;
 }
 
 button,
@@ -214,25 +214,25 @@ input {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"],
-[role="button"] {
+[type='button'],
+[type='reset'],
+[type='submit'],
+[role='button'] {
   cursor: pointer;
   -webkit-appearance: button;
 }
 
 button:-moz-focusring,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   outline: 1px dotted ButtonText;
 }
 
 legend {
-  color: inherit;
   display: table;
   max-width: 100%;
+  color: inherit;
   white-space: normal;
 }
 
@@ -249,19 +249,19 @@ textarea {
   resize: vertical;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   padding: 0;
 }
 
-[type="search"] {
-  -webkit-appearance: textfield;
+[type='search'] {
   outline-offset: -2px;
+  -webkit-appearance: textfield;
 }
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
   font: inherit;
+  -webkit-appearance: button;
 }
 /*
   Interactive & Misc
@@ -279,11 +279,11 @@ template,
   Accessibility
 ---------------------------------------------- */
 [disabled],
-[aria-disabled="true"] {
+[aria-disabled='true'] {
   cursor: not-allowed;
 }
 
-[aria-busy="true"] {
+[aria-busy='true'] {
   cursor: progress;
 }
 
@@ -291,13 +291,13 @@ template,
   cursor: pointer;
 }
 
-[aria-hidden="false"][hidden] {
+[aria-hidden='false'][hidden] {
   display: initial;
 }
 
-[aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
+[aria-hidden='false'][hidden]:not(:focus) {
   position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
 
 :focus:not(:focus-visible),

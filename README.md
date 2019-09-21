@@ -5,6 +5,9 @@
 - 全ての要素は `box-sizing: border-box` をデフォルトで継承する
 - 不必要な `margin` 、 `padding`、 `border` を排除
 - 文字サイズのリセットは行わない
+- `font-feature-settings` による文字詰め
+- `line-height` は 1.5　をデフォルトにする
+- html要素に `scroll-behavior: smooth` を指定
 - アクセシビリティに考慮
 
 ## ブラウザサポート

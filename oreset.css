@@ -1,5 +1,4 @@
-@charset "UTF-8";
-/*! Oreset.css • v1.0.0 | MIT License | https://github.com/hirosiva/Oreset.css */
+/*! Oreset.css v1.0.0 | MIT License | https://github.com/hirosiva/Oreset.css */
 /*
   # Global
 ---------------------------------------------- */
@@ -56,9 +55,9 @@ body {
   -webkit-overflow-scrolling: touch;
   min-height: 100%;
   text-rendering: optimizeLegibility;
+  font: 1em/1.5 sans-serif;
   -webkit-font-feature-settings: 'palt';
   font-feature-settings: 'palt';
-  font: 1em/1.5 sans-serif;
 }
 
 /*
@@ -264,7 +263,7 @@ textarea {
 }
 
 /*
-  Interactive & Misc
+  # Interactive & Misc
 ---------------------------------------------- */
 summary {
   display: list-item;
@@ -276,7 +275,7 @@ template,
 }
 
 /*
-  Accessibility
+  # Accessibility
 ---------------------------------------------- */
 [disabled],
 [aria-disabled='true'] {

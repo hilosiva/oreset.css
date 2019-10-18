@@ -55,7 +55,6 @@ body {
   -webkit-overflow-scrolling: touch;
   min-height: 100%;
   text-rendering: optimizeLegibility;
-  letter-spacing: .05em;
   font: 1em/1.5 sans-serif;
   -webkit-font-feature-settings: 'palt';
   font-feature-settings: 'palt';

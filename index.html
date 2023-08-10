@@ -1,113 +1,109 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>サンプル</title>
-  <link rel="stylesheet" href="oreset.css">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <h1>見出し1</h1>
-    <p>これは段落です。これは段落です。これは段落です。</p>
-  </header>
-  <main>
-    <section>
-      <h2>見出し2</h2>
-      <p>
-        これは「段落」です。これは<em>強調</em>です。<br>
-        そしてこれは<strong>重要</strong>です。<br>
-        ルビは、こんな<ruby>感<rp>(</rp><rt>かん</rt> <rp>)</rp></ruby>じで表示されます。
-      </p>
-      <h2>見出し3</h2>
-      <p><mark>マーカー</mark>も付きます</p>
-      <p>それは、<abbr title="チョーベリーグット">チョベリグ</abbr>ですね</p>
-      <blockquote>これは引用です。</blockquote>
-      <ul>
-        <li>順不同リスト</li>
-        <li>順不同リスト</li>
-        <li>順不同リスト</li>
-      </ul>
-      <hr>
-      <ol>
-        <li>番号順リスト</li>
-        <li>番号順リスト</li>
-        <li>番号順リスト</li>
-      </ol>
-      <p><a href="#top">リンク</a>はこんな感じ</p>
-    </section>
-    <section>
-      <h2>見出し2</h2>
-      <table>
-        <caption>テーブル</caption>
-        <thead>
-          <tr>
-            <th>見出しセル</th>
-            <th>見出しセル</th>
-            <th>見出しセル</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>内容セル</td>
-            <td>内容セル</td>
-            <td>内容セル</td>
-          </tr>
-          <tr>
-            <td>内容セル</td>
-            <td>内容セル</td>
-            <td>内容セル</td>
-          </tr>
-          <tr>
-            <td>内容セル</td>
-            <td>内容セル</td>
-            <td>内容セル</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section>
-      <h2>見出し2</h2>
-      <from>
-        <dl>
-          <dt>用語</dt>
-          <dd>
-            テキスト：<input type="text">
-          </dd>
-          <dt>用語</dt>
-          <dd>
-            検索：<input type="search">
-          </dd>
-          <dt>用語</dt>
-          <dd>
-            チェックボックス：<input type="checkbox">
-          </dd>
-          <dt>用語</dt>
-          <dd>
-            <select name="" id="">
-              <option value="">オプション</option>
-              <option value="">オプション</option>
-              <option value="">オプション</option>
-            </select>
-          </dd>
-          <dt>用語</dt>
-          <dd>
-            ファイル <input type="file">
-          </dd>
-          <dt>用語</dt>
-          <dd>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-          </dd>
-        </dl>
-        <p><input type="submit" value="送信"></p>
-        <p><input type="reset" value="リセット"></p>
-        <p><button>汎用ボタン</button></p>
-      </from>
-    </section>
-  </main>
-
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>サンプル</title>
+    <link rel="stylesheet" href="css/oreset.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>見出し1</h1>
+      <p>これは段落です。これは段落です。これは段落です。</p>
+    </header>
+    <main>
+      <section>
+        <h2>見出し2</h2>
+        <p>
+          これは「段落」です。これは<em>強調</em>です。<br />
+          そしてこれは<strong>重要</strong>です。<br />
+          ルビは、こんな<ruby>感<rp>(</rp><rt>かん</rt> <rp>)</rp></ruby>じで表示されます。
+        </p>
+        <h2>見出し3</h2>
+        <p><mark>マーカー</mark>も付きます</p>
+        <p>それは、<abbr title="チョーベリーグット">チョベリグ</abbr>ですね</p>
+        <blockquote>これは引用です。</blockquote>
+        <figure>
+          <img src="https://unsplash.it/640/320?random" />
+          <figcaption>画像</figcaption>
+        </figure>
+        <ul>
+          <li>順不同リスト</li>
+          <li>順不同リスト</li>
+          <li>順不同リスト</li>
+        </ul>
+        <hr />
+        <ol>
+          <li>番号順リスト</li>
+          <li>番号順リスト</li>
+          <li>番号順リスト</li>
+        </ol>
+        <p><a href="#top">リンク</a>はこんな感じ</p>
+      </section>
+      <section>
+        <h2>見出し2</h2>
+        <table>
+          <caption>
+            テーブル
+          </caption>
+          <thead>
+            <tr>
+              <th>見出しセル</th>
+              <th>見出しセル</th>
+              <th>見出しセル</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>内容セル</td>
+              <td>内容セル</td>
+              <td>内容セル</td>
+            </tr>
+            <tr>
+              <td>内容セル</td>
+              <td>内容セル</td>
+              <td>内容セル</td>
+            </tr>
+            <tr>
+              <td>内容セル</td>
+              <td>内容セル</td>
+              <td>内容セル</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>見出し2</h2>
+        <from>
+          <dl>
+            <dt>用語</dt>
+            <dd>テキスト：<input type="text" /></dd>
+            <dt>用語</dt>
+            <dd>検索：<input type="search" /></dd>
+            <dt>用語</dt>
+            <dd>チェックボックス：<input type="checkbox" /></dd>
+            <dt>用語</dt>
+            <dd>
+              <select name="" id="">
+                <option value="">オプション</option>
+                <option value="">オプション</option>
+                <option value="">オプション</option>
+              </select>
+            </dd>
+            <dt>用語</dt>
+            <dd>ファイル <input type="file" /></dd>
+            <dt>用語</dt>
+            <dd>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </dd>
+          </dl>
+          <p><input type="submit" value="送信" /></p>
+          <p><input type="reset" value="リセット" /></p>
+          <p><button>汎用ボタン</button></p>
+        </from>
+      </section>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,250 @@
+/*! Oreset.css v3.0.0 | MIT License | https://github.com/hilosiva/Oreset.css */
+
+/*
+  # Global
+---------------------------------------------- */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  padding: 0;
+  margin: 0;
+  text-underline-offset: 0.25em;
+  border-width: 1px;
+}
+
+/*
+  # Document & Sections
+---------------------------------------------- */
+:where(html) {
+  font-family: var(--base-font-family, system-ui);
+  font-weight: var(--base-font-weight, 400);
+  line-height: var(--base-leading, 1.5);
+  color: var(--base-color, initial);
+  letter-spacing: var(--base-tracking, initial);
+  overflow-wrap: anywhere;
+  color-scheme: var(--base-color-scheme, only light);
+  scrollbar-gutter: stable;
+  background-color: var(--base-background-color, initial);
+  line-break: strict;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:where(html:has(dialog:modal[open], :popover-open)) {
+  overflow: hidden;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  overflow-x: clip;
+}
+
+/*
+  # Grouping content
+---------------------------------------------- */
+:where(h1, h2, h3, h4, h5, h6) {
+  font-weight: var(--base-font-heading-weight, 700);
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+:where(h1) {
+  font-size: var(--base-font-heading-1, unset);
+}
+
+:where(h2) {
+  font-size: var(--base-font-heading-2, unset);
+}
+
+:where(h3) {
+  font-size: var(--base-font-heading-3, unset);
+}
+
+:where(h4) {
+  font-size: var(--base-font-heading-4, unset);
+}
+
+:where(h5) {
+  font-size: var(--base-font-heading-5, unset);
+}
+
+:where(h6) {
+  font-size: var(--base-font-heading-6, unset);
+}
+
+:where(hr) {
+  border-block-start-style: solid;
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+:where(address:lang(ja)) {
+  font-style: unset;
+}
+
+/*
+  # Text-level semantics
+---------------------------------------------- */
+:where(b, strong) {
+  font-weight: 700;
+}
+
+:where(small) {
+  font-size: max(0.625rem, 0.875em);
+}
+
+:where(code, kbd, samp) {
+  font-family: ui-monospace, monospace;
+}
+
+:where(:any-link) {
+  color: unset;
+  text-decoration-skip-ink: auto;
+}
+
+/*
+  # Embedded content
+---------------------------------------------- */
+:where(img, picture, svg, video, canvas, audio, iframe, embed, object) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/*
+  # Tabular data
+---------------------------------------------- */
+:where(table) {
+  border-collapse: collapse;
+}
+
+:where(caption, th) {
+  text-align: unset;
+}
+
+:where(th) {
+  font-weight: 700;
+}
+
+/*
+  # Forms
+---------------------------------------------- */
+:where(input, button, textarea, select, optgroup) {
+  font: unset;
+  color: unset;
+}
+
+:where(textarea) {
+  resize: vertical;
+  resize: block;
+}
+
+:where(textarea:not([rows])) {
+  min-block-size: 10em;
+}
+
+:where(button, label, select, summary, [role="button"], [role="option"]) {
+  cursor: pointer;
+}
+
+:where(input[type="file"])::-webkit-file-upload-button,
+:where(input[type="file"])::file-selector-button {
+  cursor: pointer;
+}
+
+:where([disabled], label:has(> input:disabled), label:has(+ input:disabled)) {
+  cursor: not-allowed;
+}
+
+:where(button, [role="button"]) {
+  touch-action: manipulation;
+  border-style: solid;
+}
+
+/*
+  # Interactive
+---------------------------------------------- */
+:where(dialog, [popover]) {
+  max-inline-size: unset;
+  max-block-size: unset;
+  margin: auto;
+  color: unset;
+  background-color: unset;
+  border-style: none;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)),
+::backdrop {
+  display: none;
+}
+
+/*
+  # Accessibility
+---------------------------------------------- */
+:where([aria-disabled="true"]) {
+  cursor: not-allowed;
+}
+
+:where([aria-busy="true"]) {
+  cursor: progress;
+}
+
+:where([aria-controls]) {
+  cursor: pointer;
+}
+
+:where([aria-hidden="false"][hidden]) {
+  display: initial;
+}
+
+:where([aria-hidden="false"][hidden]):not(:focus) {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+:where([hidden]:not([hidden="until-found"])) {
+  display: none;
+}
+
+:where(:focus:not(:focus-visible)) {
+  outline: none;
+}
+
+:where(:focus-visible, :target) {
+  scroll-margin-block: 8vh;
+}
+
+:where(.visually-hidden:not(:focus-within, :active)) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+  border: 0 !important;
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after,
+  ::backdrop {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: unset !important;
+    transition-delay: unset !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    view-transition-name: none !important;
+  }
+}

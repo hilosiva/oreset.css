@@ -6,19 +6,20 @@
 
 - 全ての要素は `box-sizing: border-box`
 - 不必要な `margin` 、 `padding`、 `border` を排除
-- 文字サイズのリセットは行わない
-- `font-feature-settings` による文字詰め
 - `line-height` は 1.5 　をデフォルトにする
-- html 要素に `scroll-behavior: smooth` を指定
+- `line-break: strict` による禁則処理
+- 見出しにはデフォルトで `text-wrap: balance` を指定
+- カスタムプロパティで、ベースの文字サイズ、書体、カラーなどをカスタマイズ
 - アクセシビリティに考慮
 
 ## ブラウザサポート
 
-- Google Chrome (latest)
-- Opera (latest)
-- Firefox (latest)
-- Safari 3.1+
+- Google Chrome 114 –
+- Edge 114 –
+- Firefox 121 –
+- Safari 17.5 –
+- Opera 99 –
 
-## ブラウザサポート
+## ライセンス
 
 MIT License.

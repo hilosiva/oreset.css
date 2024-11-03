@@ -49,7 +49,7 @@
 :where(h1, h2, h3, h4, h5, h6) {
   font-weight: var(--base-font-heading-weight, 700);
   text-wrap: balance;
-  word-break: auto-phrase;
+  /* word-break: auto-phrase; */
 }
 
 :where(h1) {

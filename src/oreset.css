@@ -1,4 +1,4 @@
-/*! Oreset.css v3.0.0 | MIT License | https://github.com/hilosiva/Oreset.css */
+/*! Oreset.css | MIT License | https://github.com/hilosiva/Oreset.css */
 
 /*
   # Global
@@ -48,8 +48,6 @@
 ---------------------------------------------- */
 :where(h1, h2, h3, h4, h5, h6) {
   font-weight: var(--base-font-heading-weight, 700);
-  text-wrap: balance;
-  /* word-break: auto-phrase; */
 }
 
 :where(h1) {
@@ -113,8 +111,15 @@
 ---------------------------------------------- */
 :where(img, picture, svg, video, canvas, audio, iframe, embed, object) {
   display: block flow;
+}
+
+:where(img, picture, svg, video) {
   max-inline-size: 100%;
   block-size: auto;
+}
+
+:where(svg) {
+  fill: currentColor;
 }
 
 /*
@@ -183,6 +188,7 @@
 ::backdrop {
   display: none;
 }
+
 
 /*
   # Accessibility

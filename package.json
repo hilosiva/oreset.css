@@ -1,6 +1,6 @@
 {
   "name": "@hilosiva/oreset",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "reset.css",
   "type": "module",
   "main": "dist/oreset.css",

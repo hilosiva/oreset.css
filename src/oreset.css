@@ -18,7 +18,7 @@
   # Document & Sections
 ---------------------------------------------- */
 :where(html) {
-  font-family: var(--base-font-family, system-ui, sans-serif);
+  font-family: var(--base-font-family), system-ui, sans-serif;
   font-weight: var(--base-font-weight, 400);
   line-height: var(--base-leading, 1.5);
   color: var(--base-color, initial);
@@ -191,7 +191,6 @@
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
   display: none;
 }
-
 
 /*
   # Accessibility

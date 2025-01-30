@@ -1,6 +1,6 @@
 {
   "name": "@hilosiva/oreset",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "reset.css",
   "type": "module",
   "main": "dist/oreset.css",
@@ -47,12 +47,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hilosiva/Oreset.css"
+    "url": "https://github.com/hilosiva/oreset.css"
   },
   "bugs": {
-    "url": "https://github.com/hilosiva/Oreset.css/issues"
+    "url": "https://github.com/hilosiva/oreset.css/issues"
   },
-  "homepage": "https://github.com/hilosiva/Oreset.css",
+  "homepage": "https://github.com/hilosiva/oreset.css",
   "author": "Shibata Hironori",
   "license": "MIT",
   "devDependencies": {

@@ -13,7 +13,7 @@ export default defineConfig([
     target: "es2020",
     outDir: "dist",
     banner: {
-      css: `/*! Oreset.css v${version} | MIT License | https://github.com/hilosiva/Oreset.css */`,
+      css: `/*! Oreset.css v${version} | MIT License | https://github.com/hilosiva/oreset.css */`,
     },
     esbuildOptions: (options) => {
       options.legalComments = "none";

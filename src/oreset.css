@@ -1,4 +1,4 @@
-/*! Oreset.css | MIT License | https://github.com/hilosiva/Oreset.css */
+/*! Oreset.css v4.0.0 | MIT License | https://github.com/hilosiva/Oreset.css */
 
 /*
   # Global
@@ -10,7 +10,6 @@
   min-inline-size: 0;
   padding: 0;
   margin: 0;
-  text-underline-offset: 0.25em;
   border-width: 1px;
 }
 
@@ -18,72 +17,63 @@
   # Document & Sections
 ---------------------------------------------- */
 :where(html) {
-  font-family: var(--base-font-family), system-ui, sans-serif;
-  font-weight: var(--base-font-weight, 400);
-  line-height: var(--base-leading, 1.5);
-  color: var(--base-color, initial);
-  letter-spacing: var(--base-tracking, initial);
-  overflow-wrap: anywhere;
-  color-scheme: var(--base-color-scheme, only light);
-  scrollbar-gutter: stable;
-  background-color: var(--base-background-color, initial);
-  line-break: strict;
-  text-rendering: optimizeLegibility;
+  /* none instead of 100% — required for iOS Safari */
   -webkit-text-size-adjust: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: none;
+  scrollbar-gutter: stable;
+  /* trim-start removes leading spacing from Japanese punctuation */
+  text-spacing-trim: trim-start;
+  text-autospace: normal;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  -webkit-tap-highlight-color: transparent;
+  interpolate-size: allow-keywords;
+  /* 1.5 as a WCAG-friendly baseline; browser default (~1.2) is too tight */
+  line-height: 1.5;
 }
 
-:where(html:has(dialog:modal[open], :popover-open)) {
+:where(html:has(dialog:modal[open])) {
   overflow: hidden;
 }
 
 :where(body) {
   min-block-size: 100svb;
+  /* clip instead of hidden — does not create a new BFC, preserves sticky positioning */
   overflow-x: clip;
+}
+
+:where(:is(h1, h2, h3, h4, h5, h6):lang(en)) {
+  /* prevents awkward single-word last lines in English headings */
+  text-wrap: balance;
 }
 
 /*
   # Grouping content
 ---------------------------------------------- */
-:where(h1, h2, h3, h4, h5, h6) {
-  font-weight: var(--base-font-heading-weight, 700);
-}
-
-:where(h1) {
-  font-size: var(--base-font-heading-1, unset);
-}
-
-:where(h2) {
-  font-size: var(--base-font-heading-2, unset);
-}
-
-:where(h3) {
-  font-size: var(--base-font-heading-3, unset);
-}
-
-:where(h4) {
-  font-size: var(--base-font-heading-4, unset);
-}
-
-:where(h5) {
-  font-size: var(--base-font-heading-5, unset);
-}
-
-:where(h6) {
-  font-size: var(--base-font-heading-6, unset);
-}
-
 :where(hr) {
-  border-block-start-style: solid;
+  border-width: 0;
+  border-block-start: 1px solid;
+  color: inherit;
+  block-size: 0;
 }
 
 :where(ul, ol) {
+  /* "" instead of none — prevents Safari from stripping list role */
   list-style-type: "";
+}
+
+:where(pre) {
+  /* no-autospace prevents text-autospace inheritance from disrupting monospace alignment */
+  text-autospace: no-autospace;
 }
 
 :where(address:lang(ja)) {
   font-style: unset;
+}
+
+:where(p:lang(en)) {
+  /* prevents orphaned words on the last line in English paragraphs */
+  text-wrap: pretty;
 }
 
 /*
@@ -94,11 +84,16 @@
 }
 
 :where(small) {
-  font-size: max(0.625rem, 0.875em);
+  /* preserves browser default (0.8em) while enforcing a 10px accessibility floor */
+  font-size: max(0.625rem, 0.8em);
 }
 
 :where(code, kbd, samp) {
   font-family: ui-monospace, monospace;
+}
+
+:where(em:lang(ja), i:lang(ja), cite:lang(ja), dfn:lang(ja)) {
+  font-style: normal;
 }
 
 :where(:any-link) {
@@ -118,8 +113,8 @@
   block-size: auto;
 }
 
-:where(svg) {
-  fill: currentColor;
+:where(iframe) {
+  border: unset;
 }
 
 /*
@@ -141,16 +136,39 @@
   # Forms
 ---------------------------------------------- */
 :where(input, button, textarea, select, optgroup) {
+  font: unset;
   color: unset;
   letter-spacing: inherit;
   word-spacing: inherit;
-  font: unset;
   font-feature-settings: inherit;
   font-variation-settings: inherit;
 }
 
+:where(button, input:is([type="button" i], [type="submit" i], [type="reset" i])) {
+  border-radius: unset;
+  background-color: unset;
+  touch-action: manipulation;
+  border-style: solid;
+}
+
+:where(input:not([type="button" i], [type="submit" i], [type="reset" i]), textarea, [contenteditable]) {
+  /* no-autospace prevents unexpected spacing inserted during text input */
+  text-autospace: no-autospace;
+}
+
+:where(input:is([type="radio" i], [type="checkbox" i])) {
+  margin: unset;
+}
+
+:where(input[type="search" i]) {
+  -webkit-appearance: textfield;
+}
+
+:where(input:is([type="tel" i], [type="url" i], [type="email" i], [type="number" i]):not(:placeholder-shown)) {
+  direction: ltr;
+}
+
 :where(textarea) {
-  resize: vertical;
   resize: block;
 }
 
@@ -158,22 +176,21 @@
   min-block-size: 10em;
 }
 
-:where(button, label, select, summary, [role="button"], [role="option"]) {
-  cursor: pointer;
+:where(fieldset) {
+  padding: unset;
+  border: unset;
 }
 
-:where(input[type="file"])::-webkit-file-upload-button,
-:where(input[type="file"])::file-selector-button {
-  cursor: pointer;
+:where(legend) {
+  padding-inline: unset;
 }
 
-:where([disabled], label:has(> input:disabled), label:has(+ input:disabled)) {
-  cursor: not-allowed;
+:where(progress) {
+  vertical-align: unset;
 }
 
-:where(button, [role="button"]) {
-  touch-action: manipulation;
-  border-style: solid;
+:where(::placeholder) {
+  opacity: unset;
 }
 
 /*
@@ -182,19 +199,45 @@
 :where(dialog, [popover]) {
   max-inline-size: unset;
   max-block-size: unset;
-  margin: auto;
   color: unset;
   background-color: unset;
   border-style: none;
+  overscroll-behavior-block: contain;
+}
+
+:where(dialog) {
+  margin: auto;
 }
 
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
   display: none;
 }
 
+:where(summary) {
+  /* "" instead of none — prevents Safari from stripping list role */
+  list-style-type: "";
+}
+
+:where(summary)::-webkit-details-marker {
+  display: none;
+}
+
 /*
   # Accessibility
 ---------------------------------------------- */
+:where(button, label, select, summary, [role="button"], [role="link"], [role="option"], [role="tab"]) {
+  cursor: pointer;
+}
+
+:where(input[type="file" i])::-webkit-file-upload-button,
+:where(input[type="file" i])::file-selector-button {
+  cursor: pointer;
+}
+
+:where([disabled], label:has(> input:disabled), label:has(+ input:disabled)) {
+  cursor: not-allowed;
+}
+
 :where([aria-disabled="true"]) {
   cursor: not-allowed;
 }
@@ -203,20 +246,12 @@
   cursor: progress;
 }
 
-:where([aria-controls]) {
-  cursor: pointer;
-}
-
-:where([aria-hidden="false"][hidden]) {
-  display: initial;
-}
-
-:where([aria-hidden="false"][hidden]):not(:focus) {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
+:where([role="button"], [role="tab"], [role="option"]) {
+  touch-action: manipulation;
 }
 
 :where([hidden]:not([hidden="until-found"])) {
+  /* until-found must remain visible for beforematch to fire */
   display: none;
 }
 
@@ -228,25 +263,13 @@
   scroll-margin-block: 8vh;
 }
 
-:where(.visually-hidden:not(:focus-within, :active)) {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip-path: inset(50%) !important;
-  white-space: nowrap !important;
-  user-select: none !important;
-  border: 0 !important;
-}
-
 /* Prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
-  *:before,
-  *:after,
+  ::before,
+  ::after,
   ::backdrop {
+    /* 0.01ms instead of 0 — ensures animationend events still fire in JS */
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     animation-delay: unset !important;

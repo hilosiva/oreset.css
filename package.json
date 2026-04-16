@@ -1,66 +1,12 @@
 {
-  "name": "@hilosiva/oreset",
-  "version": "4.0.0",
-  "description": "reset.css",
-  "type": "module",
-  "main": "dist/oreset.css",
+  "name": "oreset-monorepo",
+  "private": true,
   "scripts": {
-    "dev": "tsup --watch",
-    "build": "tsup",
-    "test": "vitest",
-    "lint": "biome check .",
-    "lint:fix": "biome check . --write",
-    "format": "biome format .",
-    "format:write": "biome format . --write",
-    "version:patch": "npm version patch --force --no-git-tag-version && pnpm readme",
-    "version:minor": "npm version minor --force --no-git-tag-version && pnpm readme",
-    "version:major": "npm version major --force --no-git-tag-version && pnpm readme",
-    "readme": "node ./scripts/update.js",
-    "publish:main": "npm publish",
-    "publish:beta": "npm publish --tag beta"
-  },
-  "style": "dist/oreset.css",
-  "exports": {
-    ".": {
-      "style": "./dist/oreset.css",
-      "require": "./dist/oreset.css",
-      "import": "./dist/oreset.css"
-    },
-    "./dist/oreset.css": "./dist/oreset.css"
-  },
-  "publishConfig": {
-    "provenance": false,
-    "access": "public",
-    "exports": {
-      ".": {
-        "require": "./dist/oreset.css",
-        "import": "./dist/oreset.css"
-      }
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "reset",
-    "CSS"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hilosiva/oreset.css"
-  },
-  "bugs": {
-    "url": "https://github.com/hilosiva/oreset.css/issues"
-  },
-  "homepage": "https://github.com/hilosiva/oreset.css",
-  "author": "Shibata Hironori",
-  "license": "MIT",
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "lightningcss": "^1.29.1",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.3",
-    "vitest": "^2.1.8"
-  },
-  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b"
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r run dev",
+    "test": "pnpm -r run test",
+    "publish:oreset": "pnpm --filter @hilosiva/oreset publish",
+    "publish:mcp": "pnpm --filter @hilosiva/oreset-mcp publish",
+    "publish:all": "pnpm --filter @hilosiva/oreset publish && pnpm --filter @hilosiva/oreset-mcp publish"
+  }
 }

@@ -1,5 +1,5 @@
 import fs from "fs";
-import packageJson from "../../package.json" assert { type: "json" };
+import packageJson from "../../package.json" with { type: "json" };
 
 export function updateVersion(filePath) {
   if (packageJson.version.includes("-bate")) return;
@@ -12,8 +12,13 @@ export function updateVersion(filePath) {
       }
 
       const escapedName = packageJson.name.replace(/\//g, "\\/");
-      const regex = new RegExp(`/${escapedName}@([^/]+)/`, "g");
-      const updated = data.replace(regex, `/${packageJson.name}@${packageJson.version}/`);
+      // CDN URL のバージョン更新（README 等）
+      const urlRegex = new RegExp(`/${escapedName}@([^/]+)/`, "g");
+      // ソース CSS のバナーコメントのバージョン更新
+      const bannerRegex = /Oreset\.css v[\d.]+(?:-[\w.]+)?/g;
+
+      let updated = data.replace(urlRegex, `/${packageJson.name}@${packageJson.version}/`);
+      updated = updated.replace(bannerRegex, `Oreset.css v${packageJson.version}`);
 
       fs.writeFile(filePath, updated, "utf8", (err) => {
         resolve();

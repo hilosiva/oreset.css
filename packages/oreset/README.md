@@ -59,7 +59,7 @@ pnpm add @hilosiva/oreset
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hilosiva/oreset@4.0.1/dist/oreset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hilosiva/oreset@4.0.3/dist/oreset.css">
 ```
 
 ---

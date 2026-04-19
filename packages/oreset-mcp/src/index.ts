@@ -4,7 +4,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 
 // ---------------------------------------------------------------------------
-// Data — oreset.css v4.0.0
+// Data — oreset.css v4.0.3
 // ---------------------------------------------------------------------------
 
 const RESET_RULES = [
@@ -385,7 +385,7 @@ const RESET_RULES = [
 ];
 
 const USAGE_GUIDE = `
-# oreset.css v4.0.0 — 設計思想・使い方・注意点
+# oreset.css v4.0.3 — 設計思想・使い方・注意点
 
 ## 概要
 
@@ -443,7 +443,7 @@ pnpm add @hilosiva/oreset
 
 ### CDN
 \`\`\`html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hilosiva/oreset@4.0.0/dist/oreset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hilosiva/oreset@4.0.3/dist/oreset.css">
 \`\`\`
 
 ## ブラウザサポート

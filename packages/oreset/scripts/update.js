@@ -1,5 +1,6 @@
 import { updateVersion } from "./utils/update-version.js";
 
-const filePath = "./README.md";
-
-updateVersion(filePath);
+await Promise.all([
+  updateVersion("./README.md"),
+  updateVersion("./src/oreset.css"),
+]);
